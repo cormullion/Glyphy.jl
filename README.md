@@ -2,8 +2,8 @@
 
 | **Documentation**                       | **Build Status**                          | **Code Coverage**               |
 |:---------------------------------------:|:-----------------------------------------:|:-------------------------------:|
-| [![][docs-stable-img]][docs-stable-url] | [![Build Status][ci-img]][ci-url]         | [![][codecov-img]][codecov-url] |
-| [![][docs-development-img]][docs-development-url] | [![Build Status][appvey-img]][appvey-url] |      
+| [![][docs-stable-img]][docs-stable-url] | [![Build Status][ci-img]][ci-url]         |  |
+| [![][docs-development-img]][docs-development-url] | |      
 
 # Glyphy
 
@@ -15,7 +15,7 @@ Glyphy searches through the names of glyphs in the Unicode system and returns a 
 using Glyphy
 julia>  glyphy("peacock")
 
- 1f99a  🦚        peacock                                                     
+ 1f99a  🦚        peacock           
 found one glyph matching "peacock"
 ```
 
@@ -24,7 +24,7 @@ Glyphy can also look for the glyph that corresponds to an integer (typing them i
 ```julia
 julia> glyphy(0x1f99a)
 
-1f99a  🦚        peacock                                                     
+1f99a  🦚        peacock              
 You can enter this glyph by typing \:peacock:TAB
 ```
 
