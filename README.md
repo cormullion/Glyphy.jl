@@ -44,8 +44,8 @@ julia> glyphy("flower")
 found 7 glyphs matching "flower"
 ```
 
-The check marks indicate that the glyph is available in the current release of
-the JuliaMono font (and not the font that you're currently using in the
+The check marks indicate that the glyph is defined in the current release of
+the JuliaMono font (it doesn't know which font you're currently using in your
 terminal).
 
 [docs-development-img]: https://img.shields.io/badge/docs-development-blue
