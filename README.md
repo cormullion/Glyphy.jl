@@ -1,9 +1,12 @@
 ![glyphy splash image](docs/src/assets/figures/glyphy-social-media-preview.png)
 
+<!--
 | **Documentation**                       | **Build Status**                          | **Code Coverage**               |
 |:---------------------------------------:|:-----------------------------------------:|:-------------------------------:|
 | [![][docs-stable-img]][docs-stable-url] | [![Build Status][ci-img]][ci-url]         |  |
 | [![][docs-development-img]][docs-development-url] | |      
+
+-->
 
 # Glyphy
 
@@ -27,6 +30,23 @@ julia> glyphy(0x1f99a)
 1f99a  🦚        peacock              
 You can enter this glyph by typing \:peacock:TAB
 ```
+
+```julia
+julia> glyphy("flower")
+
+  2055   ⁕  ✓    flower punctuation mark                                     
+  2698   ⚘  ✓    flower                                                      
+ 1f33b  🌻        sunflower                                                   
+ 1f395   🎕       bouquet of flowers                                          
+ 1f3b4  🎴        flower playing cards                                        
+ 1f4ae  💮        white flower                                                
+ 1f940  🥀        wilted flower                                               
+found 7 glyphs matching "flower"
+```
+
+The check marks indicate that the glyph is available in the current release of
+the JuliaMono font (and not the font that you're currently using in the
+terminal).
 
 [docs-development-img]: https://img.shields.io/badge/docs-development-blue
 [docs-development-url]: http://cormullion.github.io/glyphy.jl/dev/
