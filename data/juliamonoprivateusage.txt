@@ -1,0 +1,143 @@
+e0a0;[JuliaMono PUA] Powerline (VIM)
+e0a1;[JuliaMono PUA] Powerline (VIM)
+e0a2;[JuliaMono PUA] Powerline (VIM)
+e0a3;[JuliaMono PUA] Powerline (VIM)
+e0b0;[JuliaMono PUA] Powerline (VIM)
+e0b1;[JuliaMono PUA] Powerline (VIM)
+e0b2;[JuliaMono PUA] Powerline (VIM)
+e0b3;[JuliaMono PUA] Powerline (VIM)
+e0b4;[JuliaMono PUA] Powerline (VIM)
+e0b5;[JuliaMono PUA] Powerline (VIM)
+e0b6;[JuliaMono PUA] Powerline (VIM)
+e0b7;[JuliaMono PUA] Powerline (VIM)
+e0b8;[JuliaMono PUA] Powerline (VIM)
+e0b9;[JuliaMono PUA] Powerline (VIM)
+e0ba;[JuliaMono PUA] Powerline (VIM)
+e0bb;[JuliaMono PUA] Powerline (VIM)
+e0bc;[JuliaMono PUA] Powerline (VIM)
+e0bd;[JuliaMono PUA] Powerline (VIM)
+e0be;[JuliaMono PUA] Powerline (VIM)
+e0bf;[JuliaMono PUA] Powerline (VIM)
+
+e23e;[JuliaMono PUA] Ruby
+e256;[JuliaMono PUA] Java
+e275;[JuliaMono PUA] ?
+
+e606;[JuliaMono PUA] Python logo
+e608;[JuliaMono PUA] elephant?
+e609;[JuliaMono PUA] Markdown icon logo
+e60c;[JuliaMono PUA] JavaScript icon logo
+e60e;[JuliaMono PUA] angle brackets
+e611;[JuliaMono PUA] Apple logo icon
+e612;[JuliaMono PUA] text file icon
+e613;[JuliaMono PUA] folder icon
+e614;[JuliaMono PUA] CSS? icon
+e615;[JuliaMono PUA] ? icon
+e61d;[JuliaMono PUA] C++ icon logo
+e61e;[JuliaMono PUA] C icon logo
+e624;[JuliaMono PUA] julia dots icon logo
+e627;[JuliaMono PUA] Go lang icon logo
+e62a;[JuliaMono PUA] Windows icon logo
+e62b;[JuliaMono PUA] Vim icon logo
+e62c;[JuliaMono PUA] ? icon logo
+
+e709;[JuliaMono PUA] github octo cat icon logo
+e711;[JuliaMono PUA] apple icon logo
+e712;[JuliaMono PUA] linux tux penguin icon logo
+e725;[JuliaMono PUA] github fork icon
+e726;[JuliaMono PUA] github icon
+e727;[JuliaMono PUA] github merge icon
+e728;[JuliaMono PUA] github icon
+e729;[JuliaMono PUA] github icon
+e737;[JuliaMono PUA] ? icon logo
+e73e;[JuliaMono PUA] markdown icon logo
+e769;[JuliaMono PUA] onion icon logo
+e7a8;[JuliaMono PUA] Rust icon logo
+e789;[JuliaMono PUA] CC icon logo
+e78b;[JuliaMono PUA] MIT icon logo
+
+e800;[JuliaMono PUA] julia dots
+e801;[JuliaMono PUA] julia logo
+e802;[JuliaMono PUA] julia computing
+e803;[JuliaMono PUA] cormullion
+e804;[JuliaMono PUA] TAB key
+e805;[JuliaMono PUA] b subscript
+e806;[JuliaMono PUA] q subscript
+e807;[JuliaMono PUA] q superscript
+e808;[JuliaMono PUA] parallel lines subscript
+e809;[JuliaMono PUA] asterisk subscript
+e80a;[JuliaMono PUA] subscript
+e80b;[JuliaMono PUA] subscript
+e80c;[JuliaMono PUA] asterisk superscript
+e80d;[JuliaMono PUA] asterisk superscript
+e80e;[JuliaMono PUA] c subscript
+e80f;[JuliaMono PUA] d subscript
+e810;[JuliaMono PUA] f subscript
+e811;[JuliaMono PUA] g subscript
+e812;[JuliaMono PUA] w subscript
+e813;[JuliaMono PUA] y subscript
+e814;[JuliaMono PUA] z subscript
+e815;[JuliaMono PUA] α subscript
+e816;[JuliaMono PUA] δ subscript
+e817;[JuliaMono PUA] infinity subscript
+e818;[JuliaMono PUA] air element
+e819;[JuliaMono PUA] water element
+e81a;[JuliaMono PUA] fire element
+e81b;[JuliaMono PUA] earth element
+e81c;[JuliaMono PUA] zelda
+e81d;[JuliaMono PUA] 30 days of Unicode
+e826;[JuliaMono PUA] hacker symbol
+e830;[JuliaMono PUA] diffeq - sciml logo
+e831;[JuliaMono PUA] makie logo
+e832;[JuliaMono PUA] flux logo
+e833;[JuliaMono PUA] plots logo
+e834;[JuliaMono PUA] con (as in juliacon)
+e835;[JuliaMono PUA] symbolics.logo
+e836;[JuliaMono PUA] dunno
+e837;[JuliaMono PUA] Luxor logo
+e838;[JuliaMono PUA] vcat the pirate cat
+e839;[JuliaMono PUA] JuliaMono logo
+e840;[JuliaMono PUA] this is not ...
+e841;[JuliaMono PUA] ... a pipe
+e842;[JuliaMono PUA] dragon
+e843;[JuliaMono PUA] JuliaMono version
+e850;[JuliaMono PUA] Julia dots as spinner 1
+e851;[JuliaMono PUA] Julia dots as spinner 2
+e852;[JuliaMono PUA] Julia dots as spinner 3
+e853;[JuliaMono PUA] Julia dots as spinner 4
+e854;[JuliaMono PUA] Julia dots as spinner 5
+e855;[JuliaMono PUA] Julia dots as spinner 6
+e856;[JuliaMono PUA] Julia dots as spinner 7
+e857;[JuliaMono PUA] Julia dots as spinner 8
+e858;[JuliaMono PUA] Julia dots as spinner 9
+e859;[JuliaMono PUA] Julia dots as spinner 10
+e85a;[JuliaMono PUA] Julia dots as spinner 11
+e85b;[JuliaMono PUA] Julia dots as spinner 12
+
+ee00;[JuliaMono PUA] tonsky progress bar icon start
+ee01;[JuliaMono PUA] tonsky progress bar icon middle
+ee02;[JuliaMono PUA] tonsky progress bar icon end
+ee03;[JuliaMono PUA] tonsky progress bar icon full start
+ee04;[JuliaMono PUA] tonsky progress bar icon full middle
+ee05;[JuliaMono PUA] tonsky progress bar icon full end
+ee06;[JuliaMono PUA] tonsky progress bar icon spinner 1
+ee07;[JuliaMono PUA] tonsky progress bar icon spinner 2
+ee08;[JuliaMono PUA] tonsky progress bar icon spinner 3
+ee09;[JuliaMono PUA] tonsky progress bar icon spinner 4
+ee0a;[JuliaMono PUA] tonsky progress bar icon spinner 5
+ee0b;[JuliaMono PUA] tonsky progress bar icon spinner 6
+
+f0fd;[JuliaMono PUA] ? h in a box
+f179;[JuliaMono PUA] apple logo icon
+f120;[JuliaMono PUA] prompt
+f10c;[JuliaMono PUA] ? logo
+
+f2dc;[JuliaMono PUA] Nix icon logo?
+
+f302;[JuliaMono PUA] apple icon logo
+f308;[JuliaMono PUA] Docker icon logo?
+
+f418;[JuliaMono PUA] github fork icon
+
+f534;[JuliaMono PUA] apple icon logo
+f6a4;[JuliaMono PUA] ? crown icon logo

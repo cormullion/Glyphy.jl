@@ -46,16 +46,26 @@ end
 function _build_dictionary()
     unicodedict = open(dirname(dirname(pathof(Glyphy))) * "/data/unicodedata.txt", "r") do f
         raw = read(f, String)
-        d = Dictionary{Int,String}()
+        dict = Dictionary{Int,String}()
         for l in split(raw, '\n')
+            isempty(l) && continue
             unicode, name = split(l, ';')[1:2]
             if name == "<control>"
-                continue
+                 continue
             end
             unicodeval = parse(Int, unicode, base = 16)
-            insert!(d, unicodeval, lowercase(name))
+            set!(dict, unicodeval, lowercase(name))
         end
-        d
+        dict
+    end
+    open(dirname(dirname(pathof(Glyphy))) * "/data/juliamonoprivateusage.txt", "r") do f
+        raw = read(f, String)
+        for l in split(raw, '\n')
+            isempty(l) && continue
+            unicode, name = split(l, ';')[1:2]
+            unicodeval = parse(Int, unicode, base = 16)
+            set!(unicodedict, unicodeval, lowercase(name))
+        end
     end
     return unicodedict
 end
@@ -70,7 +80,7 @@ const reverse_latex_dict = Dictionary{Integer,String}()
 
 function _printentry(unicodepoint, name)
     space = string(Char(32))
-    print(lpad(string(unicodepoint, base = 16), 5))
+    print(lpad(string(unicodepoint, base = 16), 5, "0"))
     print(space ^ textwidth(Char(unicodepoint)))
     print(lpad(Char(unicodepoint), 3))
     if unicodepoint ∈ coverage
@@ -103,11 +113,13 @@ Searches are case-insentive regular expressions (ie `Regex(string, "i")`).
 The "✓" indicates that the glyph is available in the JuliaMono font.
 
 If there are a lot of results, use the `showall = true` option to see them all.
+
+Excluded: "<control>" characters.
 """
 function glyphy(s::String;
         showall = false )
     # filter looks at values
-    hitvalues = filter(v -> occursin(Regex(s, "i"), v), unicodedict)
+    hitvalues = filterview(v -> occursin(Regex(s, "i"), v), unicodedict)
     # result is another Dictionary{Int64, String}
     if isempty(hitvalues)
         println("0 results")
@@ -148,11 +160,14 @@ glyphy(0x123)
 
 The "✓" indicates that the glyph is available in the JuliaMono font.
 """
-function glyphy(i;
+function glyphy(unicodepoint::T where T <: Number;
         image = false,
         grid = 15)
-    unicodepoint = i
-    unicodename = unicodedict[i]
+    if !haskey(unicodedict, unicodepoint)
+        println("Can't find code point at 0x$(string(unicodepoint, base=16))")
+        return
+    end
+    unicodename = unicodedict[unicodepoint]
     println()
     _printentry(unicodepoint, unicodename)
     if haskey(reverse_latex_dict, Int(Char(unicodepoint)))
