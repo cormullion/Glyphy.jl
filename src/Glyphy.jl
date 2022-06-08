@@ -1,3 +1,14 @@
+"""
+Glyphy searches its Unicode glyph database.
+
+```julia
+julia> glyphy("watermelon|tangerine")
+
+1f349   🍉     watermelon
+1f34a   🍊     tangerine
+found 2 glyphs matching "watermelon|tangerine"
+```
+"""
 module Glyphy
 
 using Colors
@@ -58,16 +69,17 @@ const reverse_latex_dict = Dictionary{Integer,String}()
 [set!(reverse_latex_dict, Int(Char(v[1])), k[2:end]) for (k, v) in latex_symbols]
 
 function _printentry(unicodepoint, name)
-    print(lpad(string(unicodepoint, base = 16), 6))
-    print(lpad(Char(unicodepoint), 4))
-    print(textwidth(Char(unicodepoint)) == 2 ? "  " : " ")
+    space = string(Char(32))
+    print(lpad(string(unicodepoint, base = 16), 5))
+    print(space ^ textwidth(Char(unicodepoint)))
+    print(lpad(Char(unicodepoint), 3))
     if unicodepoint ∈ coverage
-        print(lpad("✓", 2))
+        print(lpad("✓", 3))
     else
-        print("  ")
+        print(space ^ 3)
     end
-    print("    ")
-    print(rpad(name, 60))
+    print(space ^ 2)
+    print(name)
     println()
 end
 
@@ -155,7 +167,7 @@ function glyphy(i;
     end
     # if the glyph is in JuliaMono, we can image it now
     if image == true && unicodepoint ∈ coverage
-        face = FTFont("/Users/pete/Library/Fonts/JuliaMono-Light.ttf")
+        face = FTFont(dirname(dirname(pathof(Glyphy))) * "/data/JuliaMono-Light.ttf")
         img, metric = renderface(face, Char(unicodepoint), grid)
         imgg = reinterpret(N0f8, permutedims(img, (2, 1)))
         println()
