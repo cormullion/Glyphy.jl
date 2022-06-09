@@ -125,22 +125,27 @@ function glyphy(s::String;
         println("0 results")
         return
     end
-    if length(hitvalues) > 100 && showall == false
-        println("There were $(length(hitvalues)) results for \"$(s)\"")
-        println("Use the `showall = true` option to see them all.")
-        return
-    end
     println()
+    n = 1
     for hitvalue in pairs(hitvalues)
         unicodepoint = first(hitvalue)
         unicodename = last(hitvalue)
         _printentry(unicodepoint, unicodename)
+        if showall == false
+            if n >= 50 && length(hitvalues) > 80
+                println(" showing the first $(n) of $(length(hitvalues)) results for \"$(s)\"")
+                println(" Use the `showall = true` option to see them all.")
+                return
+            end
+        end
+        n += 1
     end
     if length(hitvalues) > 1
-        println("found $(length(hitvalues)) glyphs matching \"$(s)\"")
+        println(" found $(length(hitvalues)) glyphs matching \"$(s)\"")
     else
-        println("found one glyph matching \"$(s)\"")
+        println(" found one glyph matching \"$(s)\"")
     end
+    return nothing
 end
 
 """
@@ -164,14 +169,14 @@ function glyphy(unicodepoint::T where T <: Number;
         image = false,
         grid = 15)
     if !haskey(unicodedict, unicodepoint)
-        println("Can't find code point at 0x$(string(unicodepoint, base=16))")
-        return
+        println(" can't find code point at 0x$(string(unicodepoint, base=16))")
+        return nothing
     end
     unicodename = unicodedict[unicodepoint]
     println()
     _printentry(unicodepoint, unicodename)
     if haskey(reverse_latex_dict, Int(Char(unicodepoint)))
-        print("You can enter this glyph by typing \\")
+        print(" You can enter this glyph by typing \\")
         print(reverse_latex_dict[Int(Char(unicodepoint))])
         println("TAB")
     end
@@ -197,6 +202,7 @@ function glyphy(unicodepoint::T where T <: Number;
             println()
         end
     end
+    return nothing
 end
 
 end

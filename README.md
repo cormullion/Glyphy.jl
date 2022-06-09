@@ -5,8 +5,8 @@
 Glyphy is a small utility package that runs in the Julia REPL.
 
 Glyphy searches through the names of glyphs in the Unicode
-system and returns a list of the glyph names that match the
-search string.
+glyph list and returns a list of the glyph names that match
+the search string.
 
 ```julia
 using Glyphy
@@ -31,14 +31,13 @@ julia> glyphy("flower")
 found 7 glyphs matching "flower"
 ```
 
-Here, the check mark indicates that the glyph is defined in the current release of
-the JuliaMono font (it doesn't know which font you're currently using in your
-terminal).
+Here, the check mark indicates that the glyph is defined in
+the current release of the JuliaMono font (it doesn't know
+which font you're currently using in your terminal).
 
 Glyphy can also look for the glyph with a specific integer
 code point. It's usual to type them as hexadecimal integers,
 so `0x2055`, `0x1f99a`, etc.
-
 
 ```julia
 julia> glyphy(0x1f99a)
@@ -46,6 +45,9 @@ julia> glyphy(0x1f99a)
 1f99a  🦚        peacock              
 You can enter this glyph by typing \:peacock:TAB
 ```
+
+The current version of Unicode is 14.0, released in 2021. The glyph
+list used by Glyphy is [here](http://www.unicode.org/Public/UNIDATA/UnicodeData.txt).
 
 [docs-development-img]: https://img.shields.io/badge/docs-development-blue
 [docs-development-url]: http://cormullion.github.io/glyphy.jl/dev/
