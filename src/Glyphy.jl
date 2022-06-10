@@ -108,7 +108,10 @@ julia> glyphy("smash")
 found 2 glyphs matching "smash"
 ```
 
-Searches are case-insentive regular expressions (ie `Regex(string, "i")`).
+Searches are case-insensitive. You can also supply regular
+expressions. So, if the search string contains special
+characters such as `*` or `|`, the search will be made using
+regular expressions.
 
 The "✓" indicates that the glyph is available in the JuliaMono font.
 
@@ -120,7 +123,7 @@ function glyphy(s::String;
         showall = false )
     # filter looks at values
     # if it doesn't look like a regex
-    if all(c -> isletter(c) || isdigit(c) || isspace(c), map(Char, "characters ]")) == true
+    if all(c -> isletter(c) || isdigit(c) || isspace(c) || isequal(c, "-"), map(Char, "characters ]")) == true
         # don't do a regex
         hitvalues = filterview(v -> occursin(s, v), unicodedict)
     else
@@ -152,6 +155,7 @@ function glyphy(s::String;
     else
         println(" found one glyph matching \"$(s)\"")
     end
+    hitvalues = nothing # does this help with the slow performance?
     return nothing
 end
 

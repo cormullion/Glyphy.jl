@@ -6,7 +6,7 @@
 
 ### Changed
 
-- if search string is all ltters/numbers, don't do regex search
+- if search string is all `letter|number|space|-`, don't do regex search
 
 ### Removed
 

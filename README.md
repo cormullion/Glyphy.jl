@@ -45,9 +45,12 @@ julia> glyphy(0x1f99a)
 1f99a  🦚        peacock              
 You can enter this glyph by typing \:peacock:TAB
 ```
+There are over 30,000 characters to search, so searches
+might take a few seconds...
 
-The current version of Unicode is 14.0, released in 2021. The glyph
-list used by Glyphy is [here](http://www.unicode.org/Public/UNIDATA/UnicodeData.txt).
+The current version of Unicode is 14.0, released in 2021.
+The glyph list used by Glyphy is
+[here](http://www.unicode.org/Public/UNIDATA/UnicodeData.txt).
 
 [docs-development-img]: https://img.shields.io/badge/docs-development-blue
 [docs-development-url]: http://cormullion.github.io/glyphy.jl/dev/
