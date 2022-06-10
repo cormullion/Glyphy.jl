@@ -123,7 +123,7 @@ function glyphy(s::String;
         showall = false )
     # filter looks at values
     # if it doesn't look like a regex
-    if all(c -> isletter(c) || isdigit(c) || isspace(c) || isequal(c, "-"), map(Char, "characters ]")) == true
+    if all(c -> isletter(c) || isdigit(c) || isspace(c) || isequal(c, "-"), map(Char, s)) == true
         # don't do a regex
         hitvalues = filterview(v -> occursin(s, v), unicodedict)
     else
