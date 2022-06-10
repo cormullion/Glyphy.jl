@@ -119,7 +119,14 @@ Excluded: "<control>" characters.
 function glyphy(s::String;
         showall = false )
     # filter looks at values
-    hitvalues = filterview(v -> occursin(Regex(s, "i"), v), unicodedict)
+    # if it doesn't look like a regex
+    if all(c -> isletter(c) || isdigit(c) || isspace(c), map(Char, "characters ]")) == true
+        # don't do a regex
+        hitvalues = filterview(v -> occursin(s, v), unicodedict)
+    else
+        # do a regex
+        hitvalues = filterview(v -> occursin(Regex(s, "i"), v), unicodedict)
+    end
     # result is another Dictionary{Int64, String}
     if isempty(hitvalues)
         println("0 results")
@@ -203,6 +210,11 @@ function glyphy(unicodepoint::T where T <: Number;
         end
     end
     return nothing
+end
+
+# for debugging
+function showdict()
+    return unicodedict
 end
 
 end
