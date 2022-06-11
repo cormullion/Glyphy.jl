@@ -123,12 +123,13 @@ function glyphy(s::String;
         showall = false )
     # filter looks at values
     # if it doesn't look like a regex
-    if all(c -> isletter(c) || isdigit(c) || isspace(c) || isequal(c, "-"), map(Char, s)) == true
+    if all(c -> isletter(c) || isdigit(c) || isspace(c) || isequal(c, '-') || isequal(c, '<'), map(Char, s)) == true
         # don't do a regex
         hitvalues = filterview(v -> occursin(s, v), unicodedict)
     else
         # do a regex
-        hitvalues = filterview(v -> occursin(Regex(s, "i"), v), unicodedict)
+        rgx = Regex(s, "i")
+        hitvalues = filterview(v -> occursin(rgx, v), unicodedict)
     end
     # result is another Dictionary{Int64, String}
     if isempty(hitvalues)
