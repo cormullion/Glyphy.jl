@@ -44,6 +44,7 @@ function _build_coverage_list(fontpath)
 end
 
 function _build_dictionary()
+    @info "Loading Unicode glyph list..."
     unicodedict = open(dirname(dirname(pathof(Glyphy))) * "/data/unicodedata.txt", "r") do f
         raw = read(f, String)
         dict = Dictionary{Int,String}()
@@ -72,10 +73,11 @@ end
 
 const unicodedict = _build_dictionary()
 const coverage = _build_coverage_list(dirname(dirname(pathof(Glyphy))) * "/data/JuliaMono-Light.ttf")
-const reverse_emoji_dict = Dictionary{Integer,String}()
-const reverse_latex_dict = Dictionary{Integer,String}()
 
+const reverse_emoji_dict = Dictionary{Integer,String}()
 [set!(reverse_emoji_dict, Int(Char(v[1])), k[2:end]) for (k, v) in emoji_symbols]
+
+const reverse_latex_dict = Dictionary{Integer,String}()
 [set!(reverse_latex_dict, Int(Char(v[1])), k[2:end]) for (k, v) in latex_symbols]
 
 function _printentry(unicodepoint, name)
@@ -84,10 +86,11 @@ function _printentry(unicodepoint, name)
     print(space ^ textwidth(Char(unicodepoint)))
     print(lpad(Char(unicodepoint), 3))
     if unicodepoint ∈ coverage
-        print(lpad("✓", 3))
+        print(lpad("✓", 4))
     else
-        print(space ^ 3)
+        print(space ^ 4)
     end
+    print("\e[16G") # trying to fix that non-monospaced emoji problem
     print(space ^ 2)
     print(name)
     println()
@@ -109,19 +112,21 @@ found 2 glyphs matching "smash"
 ```
 
 Searches are case-insensitive. You can also supply regular
-expressions. So, if the search string contains special
-characters such as `*` or `|`, the search will be made using
-regular expressions.
+expressions. So, if the search string contains tell-tale
+special characters such as `*` or `|`, the search will be
+made using regular expressions.
+
+If there are a lot of results, use the `showall = true`
+option to see them all.
 
 The "✓" indicates that the glyph is available in the JuliaMono font.
 
-If there are a lot of results, use the `showall = true` option to see them all.
+"pua" = Private Use Area.
 
 Excluded: "<control>" characters.
 """
 function glyphy(s::String;
         showall = false )
-    # filter looks at values
     # if it doesn't look like a regex
     if all(c -> isletter(c) || isdigit(c) || isspace(c) || isequal(c, '-') || isequal(c, '<'), map(Char, s)) == true
         # don't do a regex
@@ -156,7 +161,6 @@ function glyphy(s::String;
     else
         println(" found one glyph matching \"$(s)\"")
     end
-    hitvalues = nothing # does this help with the slow performance?
     return nothing
 end
 
@@ -207,8 +211,8 @@ function glyphy(unicodepoint::T where T <: Number;
         println()
     elseif image == true
         # we can't at the moment use FreeType unless we know which font has this character
-        # which gets into the font finding rigmarole
-        # besides, this is mostly for me testing JuliaMono :)
+        # which gets into the whole font-finding rigmarole
+        # besides, this was mostly just for me testing JuliaMono :)
         if unicodepoint ∉ coverage
             # oh, glyph is not in JuliaMono
             println()
@@ -218,7 +222,7 @@ function glyphy(unicodepoint::T where T <: Number;
 end
 
 # for debugging
-function showdict()
+function _getdict()
     return unicodedict
 end
 

@@ -1,5 +1,19 @@
 # Changelog
 
+## [v0.6.0] - 2022-06-12 12:01:48
+
+### Added
+
+### Changed
+
+- trying an ansi escape sequence to align columns
+
+### Removed
+
+### Deprecated
+
+# ────────────────────────────────────────────────────────────────────────────────────
+
 ## [v0.5.0] - 2022-06-11 10:05:43
 
 ### Added
