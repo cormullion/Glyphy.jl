@@ -2,9 +2,7 @@
 
 # Glyphy
 
-Glyphy is a small utility package that runs in the Julia REPL.
-
-Glyphy searches through the names of glyphs in the Unicode
+Glyphy is a small utility package that searches through the names of glyphs in the Unicode
 glyph list and returns a list of the glyph names that match
 the search string.
 
@@ -65,6 +63,10 @@ might take a few milliseconds...
 The current version of Unicode is 14.0, released in 2021.
 The glyph list used by Glyphy is `UnicodeData.txt` from
 [here](http://www.unicode.org/Public/UNIDATA/).
+
+Glyphy is also available as a web service, at [glyphy.info](https://glyphy.info):
+
+![glyphy.info](docs/src/assets/figures/glyphy-info.png)
 
 [docs-development-img]: https://img.shields.io/badge/docs-development-blue
 [docs-development-url]: http://cormullion.github.io/glyphy.jl/dev/
