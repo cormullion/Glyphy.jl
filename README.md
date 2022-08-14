@@ -1,4 +1,4 @@
-![Build Status][ci-img]
+[![][gh-actions-img]][gh-actions-url]
 
 ![glyphy splash image](docs/src/assets/figures/glyphy-social-media-preview.png)
 
@@ -70,11 +70,5 @@ Glyphy is also available as a web service, at [glyphy.info](https://glyphy.info)
 
 ![glyphy.info](docs/src/assets/figures/glyphy-info.png)
 
-[docs-development-img]: https://img.shields.io/badge/docs-development-blue
-[docs-development-url]: http://cormullion.github.io/glyphy.jl/dev/
-
-[docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
-[docs-stable-url]: http://cormullion.github.io/glyphy.jl/stable/
-
-[ci-img]: https://github.com/cormullion/glyphy.jl/workflows/CI/badge.svg
-[ci-url]: https://github.com/cormullion/glyphy.jl/actions?query=workflow%3ACI
+[gh-actions-img]: https://github.com/cormullion/Glyphy.jl/workflows/CI/badge.svg
+[gh-actions-url]: https://github.com/cormullion/Glyphy.jl/actions?query=workflow%3ACI
