@@ -1,3 +1,5 @@
+![Build Status][ci-img]
+
 ![glyphy splash image](docs/src/assets/figures/glyphy-social-media-preview.png)
 
 # Glyphy
