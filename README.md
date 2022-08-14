@@ -4,9 +4,9 @@
 
 Glyphy is a small utility package that searches through the names of glyphs in the Unicode
 glyph list and returns a list of the glyph names that match
-the search string.
+the search term.
 
-```julia
+```julia-term
 using Glyphy
 julia> glyphy("peacock")
 
@@ -16,29 +16,29 @@ julia> glyphy("peacock")
 
 There might be a few:
 
-```
+```julia-term
 julia> glyphy("smiling")
 
-0263a   ☺   ✓     white smiling face
-0263b   ☻   ✓     black smiling face
-1f601   😁        grinning face with smiling eyes
-1f603   😃        smiling face with open mouth
-1f604   😄        smiling face with open mouth and smiling eyes
-1f605   😅        smiling face with open mouth and cold sweat
-1f606   😆        smiling face with open mouth and tightly-closed eyes
-1f607   😇        smiling face with halo
-1f608   😈        smiling face with horns
-1f60a   😊        smiling face with smiling eyes
-1f60d   😍        smiling face with heart-shaped eyes
-1f60e   😎        smiling face with sunglasses
-1f619   😙        kissing face with smiling eyes
-1f638   😸        grinning cat face with smiling eyes
-1f63a   😺        smiling cat face with open mouth
-1f63b   😻        smiling cat face with heart-shaped eyes
-1f642   🙂        slightly smiling face
-1f92d   🤭        smiling face with smiling eyes and hand covering mouth
-1f970   🥰        smiling face with smiling eyes and three hearts
-1f972   🥲        smiling face with tear
+0263a   ☺   ✓    white smiling face
+0263b   ☻   ✓    black smiling face
+1f601   😁       grinning face with smiling eyes
+1f603   😃       smiling face with open mouth
+1f604   😄       smiling face with open mouth and smiling eyes
+1f605   😅       smiling face with open mouth and cold sweat
+1f606   😆       smiling face with open mouth and tightly-closed eyes
+1f607   😇       smiling face with halo
+1f608   😈       smiling face with horns
+1f60a   😊       smiling face with smiling eyes
+1f60d   😍       smiling face with heart-shaped eyes
+1f60e   😎       smiling face with sunglasses
+1f619   😙       kissing face with smiling eyes
+1f638   😸       grinning cat face with smiling eyes
+1f63a   😺       smiling cat face with open mouth
+1f63b   😻       smiling cat face with heart-shaped eyes
+1f642   🙂       slightly smiling face
+1f92d   🤭       smiling face with smiling eyes and hand covering mouth
+1f970   🥰       smiling face with smiling eyes and three hearts
+1f972   🥲       smiling face with tear
  found 20 glyphs matching "smiling"
 ```
 
@@ -50,7 +50,7 @@ Glyphy can also look for the glyph with a specific integer
 code point. It's usual to type them as hexadecimal integers,
 so `0x2055`, `0x1f638`, etc.
 
-```
+```julia-term
 julia> glyphy(0x1f638)
 
 1f638   😸        grinning cat face with smiling eyes

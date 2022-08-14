@@ -28,19 +28,21 @@ function _printentry(q)
     print(lpad(string(q.id, base=16), 5, "0"))
     print(space^textwidth(Char(q.id)))
     print(lpad(Char(q.id), 3))
+    # use these things to move the "cursor", since width calculations are tricky
+    print("\e[13G")
     if q.juliamono > 0
-        print(lpad("✓", 4))
+        print("✓")
     else
-        print(space^4)
+        print(space)
     end
-    print("\e[16G") # trying to fix that non-monospaced emoji problem
+    print("\e[16G")
     print(space^2)
     print(q.name)
     println()
 end
 
 """
-    glyphy(string)
+    glyphy(s::String; showall=false)
 
 Find glyphs with `string` in the name.
 
@@ -70,13 +72,12 @@ julia> glyphy("smash")
 
 Excluded: "<control>" characters.
 """
-function glyphy(s::String;
-    showall=false)
+function glyphy(s::String; showall=false)
     if all(c -> isletter(c) || isdigit(c) || isspace(c) || isequal(c, '-') || isequal(c, '<'), map(Char, s)) == true
-        ## if it doesn't look like a real regex
+        ## if it doesn't look like a real regex, do sqlite-y match
         findstatement = "select * from unicodechart where name like '%$s%' ESCAPE '`';"
     else
-        # go full regex
+        # let's go full regex
         findstatement = "select * from unicodechart where regexp('$s', name);"
     end
     q = _query_db(findstatement)
@@ -119,7 +120,6 @@ glyphy(0x123)
 ```
 
 The `✓` indicates that the glyph is available in the JuliaMono font.
-
 If there's a Julia REPL short-cut for typing it, it's shown below:
 
 ```
@@ -129,7 +129,7 @@ julia> glyphy(0x2311)
  You can enter this glyph by typing \\sqlozenge TAB
 ````
 """
-function glyphy(unicodepoint::T where {T<:Number})
+function glyphy(unicodepoint::T where {T<:Integer})
     findstatement = "select * from unicodechart where id = '$unicodepoint';"
     q = _query_db(findstatement)
     if length(q) == 0
