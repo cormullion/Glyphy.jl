@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.8.0] - 2022-08-12 11:55
+
+### Added
+
+### Changed
+
+- sqlite-based 
+
+### Removed
+
+### Deprecated
+
 ## [v0.7.0] - 2022-06-12 15:40
 
 ### Added

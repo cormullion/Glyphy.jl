@@ -8,10 +8,10 @@ the search string.
 
 ```julia
 using Glyphy
-julia>  glyphy("peacock")
+julia> glyphy("peacock")
 
- 1f99a  🦚        peacock           
-found one glyph matching "peacock"
+1f99a   🦚       peacock
+ found one glyph matching "peacock"
 ```
 
 There might be a few:
@@ -54,7 +54,7 @@ so `0x2055`, `0x1f638`, etc.
 julia> glyphy(0x1f638)
 
 1f638   😸        grinning cat face with smiling eyes
-You can enter this glyph by typing \:smile_cat:TAB
+ You can enter this glyph by typing \:smile_cat: TAB
 ```
 
 There are over 30,000 characters to search, so searches
