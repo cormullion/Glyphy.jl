@@ -1,7 +1,7 @@
 name = "Glyphy"
 uuid = "e3b492bb-b251-48f2-9293-5b5772365208"
 authors = ["cormullion <cormullion@mac.com>"]
-version = "0.8.0"
+version = "0.9.0"
 
 [deps]
 SQLite = "0aa819cd-b072-5ff4-a722-6bc24af294d9"

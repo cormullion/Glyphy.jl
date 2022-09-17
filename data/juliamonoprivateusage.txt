@@ -45,13 +45,13 @@ e709;JuliaMono PUA github octo cat icon logo
 e711;JuliaMono PUA apple icon logo
 e712;JuliaMono PUA linux tux penguin icon logo
 e725;JuliaMono PUA github fork icon
-e726;JuliaMono PUA github icon
+e726;JuliaMono PUA github pr pull request icon
 e727;JuliaMono PUA github merge icon
-e728;JuliaMono PUA github icon
+e728;JuliaMono PUA github compare icon
 e729;JuliaMono PUA github icon
 e737;JuliaMono PUA Scala icon logo
 e73e;JuliaMono PUA markdown icon logo
-e769;JuliaMono PUA onion icon logo
+e769;JuliaMono PUA perl onion icon logo
 e7a8;JuliaMono PUA Rust icon logo
 e789;JuliaMono PUA CC icon logo
 e78b;JuliaMono PUA MIT icon logo
@@ -84,7 +84,7 @@ e818;JuliaMono PUA air element
 e819;JuliaMono PUA water element
 e81a;JuliaMono PUA fire element
 e81b;JuliaMono PUA earth element
-e81c;JuliaMono PUA zelda
+e81c;JuliaMono PUA zelda breath wild sheikah slate
 e826;JuliaMono PUA hacker symbol
 e830;JuliaMono PUA diffeq - sciml logo
 e831;JuliaMono PUA makie logo
@@ -127,9 +127,9 @@ ee0a;JuliaMono PUA tonsky progress bar icon spinner 5
 ee0b;JuliaMono PUA tonsky progress bar icon spinner 6
 
 f0fd;JuliaMono PUA h in a box
-f179;JuliaMono PUA apple logo icon
-f120;JuliaMono PUA prompt
 f10c;JuliaMono PUA logo
+f120;JuliaMono PUA repl prompt
+f179;JuliaMono PUA apple logo icon
 
 f2dc;JuliaMono PUA Nix icon logo
 
@@ -140,3 +140,10 @@ f418;JuliaMono PUA github fork icon
 
 f534;JuliaMono PUA apple icon logo
 f6a4;JuliaMono PUA crown icon logo
+f0000;JuliaMono PUA superscript A
+f001a;JuliaMono PUA superscript a
+f0034;JuliaMono PUA superscript capital Alpha
+f004c;JuliaMono PUA superscript alpha
+f0067;JuliaMono PUA superscript zero
+f0093;JuliaMono PUA subscript capital a
+f0104;JuliaMono PUA subscript zero

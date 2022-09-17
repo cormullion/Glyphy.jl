@@ -62,9 +62,9 @@ julia> glyphy(0x1f638)
 There are over 30,000 characters to search, so searches
 might take a few milliseconds...
 
-The current version of Unicode is 14.0, released in 2021.
-The glyph list used by Glyphy is `UnicodeData.txt` from
-[here](http://www.unicode.org/Public/UNIDATA/).
+The current version of Unicode is 15.0, released in 2022.
+The glyph list used by Glyphy is the file `UnicodeData.txt` from
+[here](http://www.unicode.org/Public/UNIDATA/), dated 2022-08-03 17:00.
 
 Glyphy is also available as a web service, at [glyphy.info](https://glyphy.info):
 
