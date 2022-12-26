@@ -1,5 +1,29 @@
 # Changelog
 
+## [v1.0.0] - 2022-12-26 12:30
+
+### Added
+
+### Changed
+
+- font -> latest version
+
+### Removed
+
+### Deprecated
+
+## [v0.9.0] - 2022-08-12 11:55
+
+### Added
+
+### Changed
+
+minor updates to docs etc.
+
+### Removed
+
+### Deprecated
+
 ## [v0.8.0] - 2022-08-12 11:55
 
 ### Added
