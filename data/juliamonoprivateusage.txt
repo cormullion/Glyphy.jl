@@ -126,6 +126,8 @@ ee09;JuliaMono PUA tonsky progress bar icon spinner 4
 ee0a;JuliaMono PUA tonsky progress bar icon spinner 5
 ee0b;JuliaMono PUA tonsky progress bar icon spinner 6
 
+f009;JuliaMono PUA twitter logo
+f0c1;JuliaMono PUA link icon
 f0fd;JuliaMono PUA h in a box
 f10c;JuliaMono PUA logo
 f120;JuliaMono PUA repl prompt
@@ -140,6 +142,7 @@ f418;JuliaMono PUA github fork icon
 
 f534;JuliaMono PUA apple icon logo
 f6a4;JuliaMono PUA crown icon logo
+
 f0000;JuliaMono PUA superscript A
 f001a;JuliaMono PUA superscript a
 f0034;JuliaMono PUA superscript capital Alpha

@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.1.0] - 2023-02-08 11:57
+
+### Added
+
+### Changed
+
+- font -> latest version 0.048
+
+### Removed
+
+### Deprecated
+
 ## [v1.0.0] - 2022-12-26 12:30
 
 ### Added
