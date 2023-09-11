@@ -1,5 +1,19 @@
 # Changelog
 
+## [v1.2.0] - 2023-09-11 08:50
+
+### Added
+
+- ranges and arrays
+
+### Changed
+
+- font -> latest version 0.051
+
+### Removed
+
+### Deprecated
+
 ## [v1.1.0] - 2023-02-08 11:57
 
 ### Added

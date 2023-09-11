@@ -5,8 +5,7 @@
 # Glyphy
 
 Glyphy is a small utility package that searches through the names of glyphs in the Unicode
-glyph list and returns a list of the glyph names that match
-the search term.
+glyph list and returns a list of the glyph names that match the search term.
 
 ```julia-term
 using Glyphy
@@ -59,8 +58,50 @@ julia> glyphy(0x1f638)
  You can enter this glyph by typing \:smile_cat: TAB
 ```
 
+You can look for ranges and arrays of values:
+
+```julia-term
+julia-1.9> glyphy(0x32:0x7f)
+
+00032   2   ✓    digit two
+00033   3   ✓    digit three
+00034   4   ✓    digit four
+00035   5   ✓    digit five
+00036   6   ✓    digit six
+00037   7   ✓    digit seven
+00038   8   ✓    digit eight
+00039   9   ✓    digit nine
+...
+0007b   {   ✓    left curly bracket
+0007c   |   ✓    vertical line
+0007d   }   ✓    right curly bracket
+0007e   ~   ✓    tilde
+```
+
+```julia-term
+julia-1.9> glyphy([0x63, 0x2020, 0x2640])
+
+00063   c   ✓    latin small letter c
+02020   †   ✓    dagger
+02640   ♀   ✓    female sign
+```
+
+```julia-term
+julia-1.9> glyphy("^z.*")
+
+0200b   ​         zero width space
+0200c   ‌         zero width non-joiner
+0200d   ‍         zero width joiner
+022ff   ⋿   ✓    z notation bag membership
+02981   ⦁   ✓    z notation spot
+02982   ⦂   ✓    z notation type colon
+...
+```
+
 There are over 30,000 characters to search, so searches
 might take a few milliseconds...
+
+### Sources
 
 The current version of Unicode is 15.0, released in 2022.
 The glyph list used by Glyphy is the file `UnicodeData.txt` from

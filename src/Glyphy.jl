@@ -107,7 +107,82 @@ function glyphy(s::String; showall=false)
 end
 
 """
-    glyphy(int)
+    glyphy(r::UnitRange)
+
+Find the glyph numbers in the range `r` in the Unicode chart.
+
+For example:
+
+```julia
+glyphy(0x0:0x7F)
+
+00020            space
+00021   !   ✓    exclamation mark
+00022   "   ✓    quotation mark
+00023   #   ✓    number sign
+...
+0007b   {   ✓    left curly bracket
+0007c   |   ✓    vertical line
+0007d   }   ✓    right curly bracket
+0007e   ~   ✓    tilde
+```
+
+Empty glyphs are usually omitted, so 0x7F ("DELETE") isn't listed.
+"""
+function glyphy(r::UnitRange)
+    findstatement = "select * from unicodechart where id >= '$(r.start)' and id <= '$(r.stop)';"
+    q = Glyphy._query_db(findstatement)
+    if length(q) == 0
+        println(" can't find anything in the range 0x$(lpad(string(r.start, base=16), 5, string(0))) to 0x$(lpad(string(r.stop, base=16), 5, string(0)))")
+        return nothing
+    end
+    println()
+    for (n, qe) in enumerate(q)
+        Glyphy._printentry(qe)
+    end 
+    return nothing
+end
+
+"""
+    glyphy(a::Array)
+
+Find the glyph numbers in the array `a` in the Unicode chart.
+
+For example:
+
+```julia
+glyphy([0x2311, 0x3124, 0x6742, 0xa100])
+
+02311   ⌑   ✓    square lozenge
+03124   ㄤ       bopomofo letter ang
+0a100   ꄀ       yi syllable dit
+```
+"""
+function glyphy(a::Array{T, 1} where {T<:Integer})
+    s = IOBuffer()
+    for (i, n) in enumerate(a)
+        write(s, "'")
+        write(s, string(n))
+        write(s, "'")
+        i < length(a) && write(s, ", ")
+    end 
+    values = String(take!(s))    
+    findstatement = "select * from unicodechart where id in ( $(values) );"
+    q = Glyphy._query_db(findstatement)
+    if length(q) == 0
+        println(" can't find anything for any of these glyph numbers")
+        return nothing
+    end
+    println()
+    for (n, qe) in enumerate(q)
+        Glyphy._printentry(qe)
+    end 
+    return nothing
+end
+
+
+"""
+   glyphy(unicodepoint::T where {T<:Integer})
 
 Find glyph number `int` in the Unicode chart.
 
@@ -127,7 +202,7 @@ julia> glyphy(0x2311)
 
 02311   ⌑   ✓    square lozenge
  You can enter this glyph by typing \\sqlozenge TAB
-````
+```
 """
 function glyphy(unicodepoint::T where {T<:Integer})
     findstatement = "select * from unicodechart where id = '$unicodepoint';"
@@ -145,6 +220,7 @@ function glyphy(unicodepoint::T where {T<:Integer})
     end
     return nothing
 end
+
 
 Base.precompile(glyphy, (Int,))
 Base.precompile(glyphy, (String,))
