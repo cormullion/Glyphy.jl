@@ -107,6 +107,8 @@ The current version of Unicode is 15.0, released in 2022.
 The glyph list used by Glyphy is the file `UnicodeData.txt` from
 [here](http://www.unicode.org/Public/UNIDATA/), dated 2022-08-03 17:00.
 
+JuliaMono font is at version v0.052, 2023-11-30.
+
 Glyphy is also available as a web service, at [glyphy.info](https://glyphy.info):
 
 ![glyphy.info](docs/src/assets/figures/glyphy-info.png)

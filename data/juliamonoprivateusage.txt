@@ -139,6 +139,7 @@ f2dc;JuliaMono PUA Nix icon logo
 
 f302;JuliaMono PUA apple icon logo
 f308;JuliaMono PUA Docker icon logo
+f35d;JuliaMono PUA external link icon
 
 f418;JuliaMono PUA github fork icon
 
@@ -438,3 +439,9 @@ f0122;JuliaMono PUA subscript 󰄢
 f0123;JuliaMono PUA subscript 󰄣
 f0124;JuliaMono PUA subscript 󰄤
 f0125;JuliaMono PUA subscript 󰄥
+
+f0632;PUA apple keyboard caps lock
+f0633;PUA apple keyboard command
+f0634;PUA apple keyboard control
+f0635;PUA apple keyboard option
+f0636;PUA apple keyboard shift
