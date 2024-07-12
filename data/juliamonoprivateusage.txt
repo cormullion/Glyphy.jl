@@ -115,18 +115,18 @@ e859;JuliaMono PUA Julia dots as spinner 10
 e85a;JuliaMono PUA Julia dots as spinner 11
 e85b;JuliaMono PUA Julia dots as spinner 12
 
-ee00;JuliaMono PUA tonsky progress bar icon start
-ee01;JuliaMono PUA tonsky progress bar icon middle
-ee02;JuliaMono PUA tonsky progress bar icon end
-ee03;JuliaMono PUA tonsky progress bar icon full start
-ee04;JuliaMono PUA tonsky progress bar icon full middle
-ee05;JuliaMono PUA tonsky progress bar icon full end
-ee06;JuliaMono PUA tonsky progress bar icon spinner 1
-ee07;JuliaMono PUA tonsky progress bar icon spinner 2
-ee08;JuliaMono PUA tonsky progress bar icon spinner 3
-ee09;JuliaMono PUA tonsky progress bar icon spinner 4
-ee0a;JuliaMono PUA tonsky progress bar icon spinner 5
-ee0b;JuliaMono PUA tonsky progress bar icon spinner 6
+ee00;JuliaMono PUA tonsky firacode progress bar icon start
+ee01;JuliaMono PUA tonsky firacode progress bar icon middle
+ee02;JuliaMono PUA tonsky firacode progress bar icon end
+ee03;JuliaMono PUA tonsky firacode progress bar icon full start
+ee04;JuliaMono PUA tonsky firacode progress bar icon full middle
+ee05;JuliaMono PUA tonsky firacode progress bar icon full end
+ee06;JuliaMono PUA tonsky firacode progress bar icon spinner 1
+ee07;JuliaMono PUA tonsky firacode progress bar icon spinner 2
+ee08;JuliaMono PUA tonsky firacode progress bar icon spinner 3
+ee09;JuliaMono PUA tonsky firacode progress bar icon spinner 4
+ee0a;JuliaMono PUA tonsky firacode progress bar icon spinner 5
+ee0b;JuliaMono PUA tonsky firacode progress bar icon spinner 6
 
 f009;JuliaMono PUA twitter logo
 f0c1;JuliaMono PUA link icon
@@ -445,3 +445,5 @@ f0633;PUA apple keyboard command
 f0634;PUA apple keyboard control
 f0635;PUA apple keyboard option
 f0636;PUA apple keyboard shift
+
+f0ad1;PUA mastodon logo 󰫑
