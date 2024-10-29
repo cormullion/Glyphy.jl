@@ -1,6 +1,20 @@
 # Changelog
 
-## [v1.4.0] - 2024-07-12
+## [v1.5.0] - 2024-10-29
+
+### Added
+
+### Changed
+
+- font -> latest version 0.058
+- updated to Unicode 16
+- incorporate shortcuts into display
+
+### Removed
+
+### Deprecated
+#
+# [v1.4.0] - 2024-07-12
 
 ### Added
 

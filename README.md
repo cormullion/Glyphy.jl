@@ -5,10 +5,9 @@
 # Glyphy
 
 Glyphy is a small utility package that searches
-through the names of glyphs in the Unicode glyph
-list and returns a list of the glyph names that
-match the search term, and REPL shortcuts if
-available.
+through a list of Unicode glyph names and returns a list 
+of glyphs that match the search term, and any REPL shortcuts,
+if available.
 
 ```julia-term
 using Glyphy
@@ -78,7 +77,7 @@ julia> glyphy(0x32:0x7f)
 00039   9   ✓    digit nine
 ...
 0007b   {   ✓    left curly bracket
-0007c       ✓    vertical line
+0007c   |   ✓    vertical line
 0007d   }   ✓    right curly bracket
 0007e   ~   ✓    tilde
 ```
@@ -121,6 +120,8 @@ The glyph list used by Glyphy is the file `UnicodeData.txt` from
 JuliaMono font (https://github.com/cormullion/juliamono) is at version v0.058, 2024-10-19.
 
 REPL shortcuts are as found in Julia 1.11.
+
+The font fallback mechanism on your computer should be able to find suitable designs for many of the Unicode glyphs, subject to the abilities of your terminal. (More explanations [here](https://www.figma.com/blog/when-fonts-fall/).)
 
 Glyphy is also available as a web service, at [glyphy.info](https://glyphy.info):
 
