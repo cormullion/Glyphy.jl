@@ -38,11 +38,18 @@ function _printentry(q)
     print("\e[16G")
     print(space^2)
     print(q.name)
+
+    # print shortcut
+    if length(q.shortcut) > 0
+        print(" ⌨ ")
+        print("\\")
+        print(q.shortcut)
+    end
     println()
 end
 
 """
-    glyphy(s::String; showall=false)
+    glyphy(s::String; showall=false, shortcut=true)
 
 Find glyphs with `string` in the name.
 
@@ -51,9 +58,9 @@ For example:
 ```julia
 julia> glyphy("smash")
 
-  2a33   ⨳  ✓    smash product
-  2a50   ⩐  ✓    closed union with serifs and smash product
-found 2 glyphs matching "smash"
+02a33   ⨳   ✓    smash product ⌨ \\smashtimes
+02a50   ⩐   ✓    closed union with serifs and smash product ⌨ \\closedvarcupsmashprod
+ found 2 glyphs matching "smash"
 ```
 
 If there are a lot of results, use the `showall = true`
@@ -62,17 +69,12 @@ option to see them all.
 The "✓" indicates that the glyph is available in the JuliaMono font.
 "pua" = Private Use Area.
 
-```julia
-julia> glyphy("smash")
+If `shortcut=true`, if there's a keyboard shortcut in the Julia REPL, 
+it's shown after the `⌨`.
 
-02a33   ⨳   ✓    smash product
-02a50   ⩐   ✓    closed union with serifs and smash product
- found 2 glyphs matching "smash"
-```
-
-Excluded: "<control>" characters.
+The characters with "<control>" in the name aren't included.
 """
-function glyphy(s::String; showall=false)
+function glyphy(s::String; showall=false, shortcut=true)
     if all(c -> isletter(c) || isdigit(c) || isspace(c) || isequal(c, '-') || isequal(c, '<'), map(Char, s)) == true
         ## if it doesn't look like a real regex, do sqlite-y match
         findstatement = "select * from unicodechart where name like '%$s%' ESCAPE '`';"
@@ -153,7 +155,7 @@ For example:
 ```julia
 glyphy([0x2311, 0x3124, 0x6742, 0xa100])
 
-02311   ⌑   ✓    square lozenge
+02311   ⌑   ✓    square lozenge ⌨ \\sqlozenge
 03124   ㄤ       bopomofo letter ang
 0a100   ꄀ       yi syllable dit
 ```
@@ -195,13 +197,19 @@ glyphy(0x123)
 ```
 
 The `✓` indicates that the glyph is available in the JuliaMono font.
-If there's a Julia REPL short-cut for typing it, it's shown below:
 
-```
+```julia
 julia> glyphy(0x2311)
 
-02311   ⌑   ✓    square lozenge
- You can enter this glyph by typing \\sqlozenge TAB
+02311   ⌑   ✓    square lozenge ⌨ \\sqlozenge
+```
+
+It's usual to supply glyph numbers in hexadecimal, eg `0x...`. 
+
+```julia
+glyphy(123)
+
+0007b   {   ✓    left curly bracket
 ```
 """
 function glyphy(unicodepoint::T where {T<:Integer})
@@ -213,11 +221,6 @@ function glyphy(unicodepoint::T where {T<:Integer})
     end
     println()
     _printentry(q[1])
-    if q[1].shortcut != ""
-        print(" You can enter this glyph by typing \\")
-        print(q[1].shortcut)
-        println(" TAB")
-    end
     return nothing
 end
 
