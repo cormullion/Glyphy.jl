@@ -32,9 +32,9 @@ jobs:
         with:
           version: ${{ matrix.julia-version }}
           arch: ${{ matrix.julia-arch }}
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         env:
-          cache-name: cache-artifacts
+          -name: cache-artifacts
         with:
           path: ~/.julia/artifacts
           key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ hashFiles('**/Project.toml') }}
