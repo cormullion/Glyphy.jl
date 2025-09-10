@@ -1,5 +1,18 @@
 # Changelog
 
+## [v1.6.0] - 2025-09-10
+
+### Added
+
+### Changed
+
+- font -> latest version 0.061
+- updated to Unicode 17
+
+### Removed
+
+### Deprecated
+
 ## [v1.5.0] - 2024-10-29
 
 ### Added

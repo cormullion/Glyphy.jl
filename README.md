@@ -113,11 +113,11 @@ might take a few milliseconds...
 
 ### Sources
 
-The current version of Unicode is 16.0, released in 2024.
+The current version of Unicode is 17.0, released in September 2025.
 The glyph list used by Glyphy is the file `UnicodeData.txt` from
-[here](http://www.unicode.org/Public/UNIDATA/), dated 2024-08-25 18:05.
+[here](http://www.unicode.org/Public/UNIDATA/), dated 2025-08-15 19:45.
 
-JuliaMono font (https://github.com/cormullion/juliamono) is at version v0.058, 2024-10-19.
+JuliaMono font (https://github.com/cormullion/juliamono) is at version v0.061, 2025-09-09.
 
 REPL shortcuts are as found in Julia 1.11.
 
