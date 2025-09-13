@@ -84,7 +84,7 @@ function glyphy(s::String; output=:stdout, showall=(output==:stdout ? false : tr
     end
     q = _query_db(findstatement)
     if output == :array
-        retval = similar([], length(q), 5)
+        retval = similar([], showall ? length(q) : min(length(q), 50), 5)
         r = 1
         for row in q
             retval[r, 1] = lpad(string(row.id, base=16), 5, "0")
@@ -92,6 +92,7 @@ function glyphy(s::String; output=:stdout, showall=(output==:stdout ? false : tr
             retval[r, 3] = row.juliamono |> Bool
             retval[r, 4] = row.name
             retval[r, 5] = row.shortcut
+            r >= size(retval, 1) && break
             r += 1
         end
         return retval
