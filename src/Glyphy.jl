@@ -74,7 +74,7 @@ it's shown after the `⌨`.
 
 The characters with "<control>" in the name aren't included.
 """
-function glyphy(s::String; showall=false, shortcut=true)
+function glyphy(s::String; output=:stdout, showall=(output==:stdout ? false : true), shortcut=true)
     if all(c -> isletter(c) || isdigit(c) || isspace(c) || isequal(c, '-') || isequal(c, '<'), map(Char, s)) == true
         ## if it doesn't look like a real regex, do sqlite-y match
         findstatement = "select * from unicodechart where name like '%$s%' ESCAPE '`';"
@@ -83,6 +83,19 @@ function glyphy(s::String; showall=false, shortcut=true)
         findstatement = "select * from unicodechart where regexp('$s', name);"
     end
     q = _query_db(findstatement)
+    if output == :array
+        retval = similar([], length(q), 5)
+        r = 1
+        for row in q
+            retval[r, 1] = lpad(string(row.id, base=16), 5, "0")
+            retval[r, 2] = Char(row.id)
+            retval[r, 3] = row.juliamono |> Bool
+            retval[r, 4] = row.name
+            retval[r, 5] = row.shortcut
+            r += 1
+        end
+        return retval
+    end
     if length(q) == 0
         println("0 results")
         return
