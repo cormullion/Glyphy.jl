@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.7.0] - 2025-09-18
+
+### Added
+
+- New keyword `output`
+
+### Changed
+
+- docstring about the shortcut `shortcut` keyword
+
+### Removed
+
 ## [v1.6.0] - 2025-09-10
 
 ### Added
