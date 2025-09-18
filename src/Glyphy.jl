@@ -48,8 +48,24 @@ function _printentry(q)
     println()
 end
 
+function _make_array(q, showall::Bool=true)
+    retval = similar([], showall ? length(q) : min(length(q), 50), 5)
+    r = 1
+    for row in q
+        retval[r, 1] = lpad(string(row.id, base=16), 5, "0")
+        retval[r, 2] = Char(row.id)
+        retval[r, 3] = row.juliamono |> Bool
+        retval[r, 4] = row.name
+        retval[r, 5] = row.shortcut
+        r >= size(retval, 1) && break
+        r += 1
+    end
+    return retval
+end
+
 """
     glyphy(s::String; showall=false, shortcut=true)
+    glyphy(s::String; output, showall=true, shortcut=true)
 
 Find glyphs with `string` in the name.
 
@@ -69,10 +85,14 @@ option to see them all.
 The "✓" indicates that the glyph is available in the JuliaMono font.
 "pua" = Private Use Area.
 
-If `shortcut=true`, if there's a keyboard shortcut in the Julia REPL, 
+If there's a keyboard shortcut in the Julia REPL,
 it's shown after the `⌨`.
 
+Setting `output=:array` will cause `glyphy` to return an `Array` with the
+information instead of writing it to `stdout`.
+
 The characters with "<control>" in the name aren't included.
+The `shortcut` keyword is ignored.
 """
 function glyphy(s::String; output=:stdout, showall=(output==:stdout ? false : true), shortcut=true)
     if all(c -> isletter(c) || isdigit(c) || isspace(c) || isequal(c, '-') || isequal(c, '<'), map(Char, s)) == true
@@ -83,20 +103,7 @@ function glyphy(s::String; output=:stdout, showall=(output==:stdout ? false : tr
         findstatement = "select * from unicodechart where regexp('$s', name);"
     end
     q = _query_db(findstatement)
-    if output == :array
-        retval = similar([], showall ? length(q) : min(length(q), 50), 5)
-        r = 1
-        for row in q
-            retval[r, 1] = lpad(string(row.id, base=16), 5, "0")
-            retval[r, 2] = Char(row.id)
-            retval[r, 3] = row.juliamono |> Bool
-            retval[r, 4] = row.name
-            retval[r, 5] = row.shortcut
-            r >= size(retval, 1) && break
-            r += 1
-        end
-        return retval
-    end
+    output == :array && return _make_array(q, showall)
     if length(q) == 0
         println("0 results")
         return
@@ -123,7 +130,7 @@ function glyphy(s::String; output=:stdout, showall=(output==:stdout ? false : tr
 end
 
 """
-    glyphy(r::UnitRange)
+    glyphy(r::UnitRange; output=:stdout)
 
 Find the glyph numbers in the range `r` in the Unicode chart.
 
@@ -143,11 +150,15 @@ glyphy(0x0:0x7F)
 0007e   ~   ✓    tilde
 ```
 
+Setting `output=:array` will cause `glyphy` to return an `Array` with the
+information instead of writing it to `stdout`.
+
 Empty glyphs are usually omitted, so 0x7F ("DELETE") isn't listed.
 """
-function glyphy(r::UnitRange)
+function glyphy(r::UnitRange; output=:stdout)
     findstatement = "select * from unicodechart where id >= '$(r.start)' and id <= '$(r.stop)';"
     q = Glyphy._query_db(findstatement)
+    output == :array && return _make_array(q)
     if length(q) == 0
         println(" can't find anything in the range 0x$(lpad(string(r.start, base=16), 5, string(0))) to 0x$(lpad(string(r.stop, base=16), 5, string(0)))")
         return nothing
@@ -160,7 +171,7 @@ function glyphy(r::UnitRange)
 end
 
 """
-    glyphy(a::Array)
+    glyphy(a::Array; output=:stdout)
 
 Find the glyph numbers in the array `a` in the Unicode chart.
 
@@ -173,8 +184,11 @@ glyphy([0x2311, 0x3124, 0x6742, 0xa100])
 03124   ㄤ       bopomofo letter ang
 0a100   ꄀ       yi syllable dit
 ```
+
+Setting `output=:array` will cause `glyphy` to return an `Array` with the
+information instead of writing it to `stdout`.
 """
-function glyphy(a::Array{T, 1} where {T<:Integer})
+function glyphy(a::Array{T, 1} where {T<:Integer}; output=:stdout)
     s = IOBuffer()
     for (i, n) in enumerate(a)
         write(s, "'")
@@ -185,6 +199,7 @@ function glyphy(a::Array{T, 1} where {T<:Integer})
     values = String(take!(s))    
     findstatement = "select * from unicodechart where id in ( $(values) );"
     q = Glyphy._query_db(findstatement)
+    output == :array && return _make_array(q)
     if length(q) == 0
         println(" can't find anything for any of these glyph numbers")
         return nothing
@@ -198,7 +213,7 @@ end
 
 
 """
-   glyphy(unicodepoint::T where {T<:Integer})
+   glyphy(unicodepoint::T where {T<:Integer}; output=:stdout)
 
 Find glyph number `int` in the Unicode chart.
 
@@ -225,10 +240,14 @@ glyphy(123)
 
 0007b   {   ✓    left curly bracket
 ```
+
+Setting `output=:array` will cause `glyphy` to return an `Array` with the
+information instead of writing it to `stdout`.
 """
-function glyphy(unicodepoint::T where {T<:Integer})
+function glyphy(unicodepoint::T where {T<:Integer}; output=:stdout)
     findstatement = "select * from unicodechart where id = '$unicodepoint';"
     q = _query_db(findstatement)
+    output == :array && return _make_array(q)
     if length(q) == 0
         println(" can't find anything at 0x$(string(unicodepoint, base=16))")
         return nothing
