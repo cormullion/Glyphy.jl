@@ -5,9 +5,10 @@
 # Glyphy
 
 Glyphy is a small utility package that searches
-through a list of Unicode glyph names and returns a list 
+through a list of Unicode glyph names and prints a list 
 of glyphs that match the search term, and any REPL shortcuts,
-if available.
+if available. All `glyphy` methods can also return the output
+as a `Matrix` if this is preferred.
 
 ```julia-term
 using Glyphy
