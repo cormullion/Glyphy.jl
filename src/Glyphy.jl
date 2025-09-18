@@ -69,10 +69,11 @@ option to see them all.
 The "✓" indicates that the glyph is available in the JuliaMono font.
 "pua" = Private Use Area.
 
-If `shortcut=true`, if there's a keyboard shortcut in the Julia REPL, 
+If there's a keyboard shortcut in the Julia REPL,
 it's shown after the `⌨`.
 
 The characters with "<control>" in the name aren't included.
+The `shortcut` keyword is ignored.
 """
 function glyphy(s::String; output=:stdout, showall=(output==:stdout ? false : true), shortcut=true)
     if all(c -> isletter(c) || isdigit(c) || isspace(c) || isequal(c, '-') || isequal(c, '<'), map(Char, s)) == true
