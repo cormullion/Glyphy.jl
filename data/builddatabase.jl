@@ -73,7 +73,7 @@ function _build_coverage_list(fontpath)
 end
 
 function _build_database(db)
-    @info " building database"
+    @info " ...building database"
     open(joinpath(@__DIR__, "unicodedata.txt"), "r") do f
         raw = read(f, String)
         for l in split(raw, '\n')
@@ -106,11 +106,18 @@ createdatabase(dbpath)
 db = opendatabase(dbpath)
 
 const reverse_emoji_dict = Dict{Integer,String}()
+@info " doing emojis"
 [reverse_emoji_dict[Int(Char(v[1]))] = k[2:end] for (k, v) in REPL.REPLCompletions.emoji_symbols]
 
 const reverse_latex_dict = Dict{Integer,String}()
+@info " doing LaTeX completions"
 [reverse_latex_dict[Int(Char(v[1]))] = k[2:end] for (k, v) in REPL.REPLCompletions.latex_symbols]
 
+
+@info " getting glyphs from font"
 const coverage = _build_coverage_list(joinpath(@__DIR__, "JuliaMono-Light.ttf"))
+
+@info " build database..."
 const unicodedb = _build_database(db)
+
 @info "finished building glyphs database - it's at $dbpath"
