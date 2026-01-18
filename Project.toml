@@ -1,16 +1,16 @@
 name = "Glyphy"
 uuid = "e3b492bb-b251-48f2-9293-5b5772365208"
 authors = ["cormullion <cormullion@mac.com>"]
-version = "1.7.0"
+version = "1.8.0"
 
 [deps]
 SQLite = "0aa819cd-b072-5ff4-a722-6bc24af294d9"
 Tables = "bd369af6-aec1-5ad0-b16a-f7cc5008161c"
 
 [compat]
-SQLite = "1.6.1"
+SQLite = "1.7"
 Tables = "1.10, 1.11, 1.12, 1.12.1"
-julia = "1.6"
+julia = "1.9"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

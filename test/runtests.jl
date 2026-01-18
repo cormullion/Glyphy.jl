@@ -2,13 +2,20 @@ using Glyphy
 using Test
 
 @testset "Glyphy.jl" begin
+    println("\n look for \"peacock\"")
     glyphy("peacock")
+     println("\n look for \"cat\"")
     glyphy("cat")
+     println("\n look for 0x33")
     glyphy(0x33)
+     println("\n look for 0x33:0x43")
     glyphy(0x33:0x43)
+    println("\n look for 0x33:0x43")
     glyphy(0xffee:0xffff)
+    println("\n look for \"[43]\"")
     glyphy([43])
-    glyphy([43, 123, 2341, 12])
+    println("\n look for \"[43, 123, 2341, 32]\"")
+    glyphy([43, 123, 2341, 32])
 
     @testset "array output" begin
         @test all(size(glyphy("and"; output=:array)) .>= (200, 5))

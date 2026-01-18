@@ -102,6 +102,12 @@ e840;JuliaMono PUA this is not a
 e841;JuliaMono PUA not a pipe
 e842;JuliaMono PUA dragon
 e843;JuliaMono PUA JuliaMono version
+e846;JuliaMono PUA celtic spiral
+e847;JuliaMono PUA celtic spiral
+e848;JuliaMono PUA labyrinth
+e849;JuliaMono PUA labyrinth
+e84a;JuliaMono PUA labyrinth
+e84b;JuliaMono PUA labyrinth
 e850;JuliaMono PUA Julia dots as spinner 1
 e851;JuliaMono PUA Julia dots as spinner 2
 e852;JuliaMono PUA Julia dots as spinner 3
