@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.9.0] - 2026-09-17
+
+### Changed
+
+Updated for Julia v1.13 and JuliaMono 0.063 and Unicode 18.0.
+
+## [v1.8.0] - 2025-09-21
+
+### Changed
+
+Updated for Julia v1.12 and JuliaMono 0.062.
+
 ## [v1.7.0] - 2025-09-21
 
 ### Added

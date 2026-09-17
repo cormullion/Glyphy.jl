@@ -52,9 +52,9 @@ e729;JuliaMono PUA github icon
 e737;JuliaMono PUA Scala icon logo
 e73e;JuliaMono PUA markdown icon logo
 e769;JuliaMono PUA perl onion icon logo
-e7a8;JuliaMono PUA Rust icon logo
 e789;JuliaMono PUA CC icon logo
 e78b;JuliaMono PUA MIT icon logo
+e7a8;JuliaMono PUA Rust icon logo
 
 e800;JuliaMono PUA julia dots
 e801;JuliaMono PUA julia logo
@@ -101,13 +101,14 @@ e839;JuliaMono PUA JuliaMono logo
 e840;JuliaMono PUA this is not a
 e841;JuliaMono PUA not a pipe
 e842;JuliaMono PUA dragon
-e843;JuliaMono PUA JuliaMono version
-e846;JuliaMono PUA celtic spiral
-e847;JuliaMono PUA celtic spiral
-e848;JuliaMono PUA labyrinth
-e849;JuliaMono PUA labyrinth
-e84a;JuliaMono PUA labyrinth
-e84b;JuliaMono PUA labyrinth
+e843;JuliaMono PUA JuliaMono font version
+e844;JuliaMono PUA JuliaCon Eindhoven 2025
+e846;JuliaMono PUA celtic spiral 1
+e847;JuliaMono PUA celtic spiral 2
+e848;JuliaMono PUA labyrinth 1
+e849;JuliaMono PUA labyrinth 2
+e84a;JuliaMono PUA labyrinth 3
+e84b;JuliaMono PUA labyrinth 4
 e850;JuliaMono PUA Julia dots as spinner 1
 e851;JuliaMono PUA Julia dots as spinner 2
 e852;JuliaMono PUA Julia dots as spinner 3
@@ -120,6 +121,13 @@ e858;JuliaMono PUA Julia dots as spinner 9
 e859;JuliaMono PUA Julia dots as spinner 10
 e85a;JuliaMono PUA Julia dots as spinner 11
 e85b;JuliaMono PUA Julia dots as spinner 12
+
+e860;JuliaMono PUA less than equal subscript 
+e861;JuliaMono PUA greater than equal subscript 
+e862;JuliaMono PUA not equal subscript 
+e863;JuliaMono PUA less than equal superscript 
+e864;JuliaMono PUA greater than equal superscript 
+e865;JuliaMono PUA not equal superscript 
 
 ee00;JuliaMono PUA tonsky firacode progress bar icon start
 ee01;JuliaMono PUA tonsky firacode progress bar icon middle

@@ -116,15 +116,19 @@ might take a few milliseconds...
 
 The current version of Unicode is 17.0, released in September 2025.
 The glyph list used by Glyphy is the file `UnicodeData.txt` from
-[here](http://www.unicode.org/Public/UNIDATA/), dated 2025-08-15 19:45.
+[here](http://www.unicode.org/Public/UNIDATA/), dated 2026-09-01 15:29.
 
-JuliaMono font (https://github.com/cormullion/juliamono) is at version v0.062.
+JuliaMono font (https://github.com/cormullion/juliamono) is at version v0.063.
 
-REPL shortcuts are as found in Julia 1.12.
+REPL shortcuts are as found in Julia 1.13.
 
 The font fallback mechanism on your computer should be able to find suitable designs for many of the Unicode glyphs, subject to the abilities of your terminal. (More explanations [here](https://www.figma.com/blog/when-fonts-fall/).)
 
 Glyphy is also available as a web service, at [glyphy.info](https://glyphy.info):
+
+```julia
+> gd = DataFrame(glyphy(0x1CEC0:0x1CED0, output = :array), :auto)
+```
 
 ![glyphy.info](docs/src/assets/figures/glyphy-info.png)
 
